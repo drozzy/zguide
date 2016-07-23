@@ -1,0 +1,17 @@
+{application, examples,
+ [{description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { examples_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    erlangzmq
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.
