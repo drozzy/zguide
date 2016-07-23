@@ -1,1 +1,4 @@
-[{<<"erlangzmq">>,{pkg,<<"erlangzmq">>,<<"1.0.0">>},0}].
+[{<<"erlangzmq">>,
+  {git,"git@github.com:chovencorp/erlangzmq.git",
+       {ref,"9f49f87487be39af12d7c4fb6e2548296e946d42"}},
+  0}].
