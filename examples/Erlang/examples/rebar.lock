@@ -1,4 +1,4 @@
 [{<<"erlangzmq">>,
-  {git,"git@github.com:chovencorp/erlangzmq.git",
-       {ref,"9f49f87487be39af12d7c4fb6e2548296e946d42"}},
+  {git,"git@github.com:drozzy/erlangzmq.git",
+       {ref,"daab2c24a4cef1300e34f65c285fa00c38c33229"}},
   0}].

@@ -3,5 +3,5 @@
 
 main() ->
     % {ok, Version} = application:get_key(erlangzmq, vsn),
-    {Major, Minor, Patch} = erlangzmq:version(),
+    {ok, {Major, Minor, Patch}} = erlangzmq:version(),
     io:format("Current 0MQ version is ~b.~b.~b~n", [Major, Minor, Patch]).
