@@ -29,7 +29,7 @@ process_confirmations(Socket, N) ->
 
 process_confirmations(_, X, X) -> ok;
 process_confirmations(Socket, X, N) ->
-	String = erlangzmq:recv(Socket),
+	{ok, _} = erlangzmq:recv(Socket),
 	case X rem 10 of
 		0 -> io:format(":~n", []);
 		_ -> io:format(".", [])
