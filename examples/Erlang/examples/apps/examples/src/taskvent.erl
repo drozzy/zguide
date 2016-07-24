@@ -24,7 +24,7 @@ main() ->
 
 	io:format("Total expected cost: ~b msec~n", [TotalMsec]).
 
-send_tasks(N, Socket) -> send_tasks(1, N + 1, Socket, 0).
+send_tasks(N, Socket) -> send_tasks(0, N, Socket, 0).
 
 send_tasks(N, N, _, Acc) -> Acc;
 send_tasks(X, N, Socket, Acc) ->
