@@ -13,26 +13,26 @@ main() ->
 	{ok, _} = erlangzmq:recv(Receiver),
 
 	% Start our clock now
-	StartTime = erlang:monotonic_time(milli_seconds),
+	TStart = erlang:monotonic_time(milli_seconds),
 
 	% Process 100 confirmations
 	process_confirmations(Receiver, 100),
 
-	EndTime = erlang:monotonic_time(milli_seconds),
+	% Calculate and report duration of batch
+	TEnd = erlang:monotonic_time(milli_seconds),
 
-	Elapsed = EndTime - StartTime,
-	io:format("Total elapsed time: ~b msec~n", [Elapsed]).
+	io:format("Total elapsed time: ~b msec~n", [TEnd - TStart]).
 
 
 process_confirmations(Socket, N) ->
-	process_confirmations(Socket, 1, N).
+	process_confirmations(Socket, 1, N + 1).
 
 process_confirmations(_, X, X) -> ok;
 process_confirmations(Socket, X, N) ->
 	{ok, _} = erlangzmq:recv(Socket),
 	case X rem 10 of
-		0 -> io:format(":~n", []);
-		_ -> io:format(".", [])
+		0 -> io:format(":~n");
+		_ -> io:format(".")
 	end,
 	process_confirmations(Socket, X + 1, N).
 
