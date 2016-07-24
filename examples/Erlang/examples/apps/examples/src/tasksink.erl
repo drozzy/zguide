@@ -10,7 +10,7 @@ main() ->
 	{ok, _} = erlangzmq:bind(Receiver, tcp, "localhost", 5558),
 
 	% Wait for start of batch
-	_String = erlangzmq:recv(Receiver),
+	{ok, _} = erlangzmq:recv(Receiver),
 
 	% Start our clock now
 	StartTime = erlang:monotonic_time(milli_seconds),
